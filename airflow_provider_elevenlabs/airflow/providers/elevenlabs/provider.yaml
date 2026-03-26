@@ -1,0 +1,21 @@
+package-name: airflow-provider-elevenlabs
+name: ElevenLabs Provider
+description: Custom Apache Airflow provider for ElevenLabs
+state: ready
+
+versions:
+  - 0.1.0
+
+connection-types:
+  - hook-class-name: airflow.providers.elevenlabs.hooks.elevenlabs.ElevenLabsHook
+    connection-type: elevenlabs
+
+hooks:
+  - integration-name: ElevenLabs
+    python-modules:
+      - airflow.providers.elevenlabs.hooks.elevenlabs
+
+operators:
+  - integration-name: ElevenLabs
+    python-modules:
+      - airflow.providers.elevenlabs.operators.text_to_speech
